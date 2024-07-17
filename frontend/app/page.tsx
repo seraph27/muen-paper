@@ -7,8 +7,16 @@ export default function Home() {
     const [textValue, setTextValue] = useState("");
     const [outputText, setOutputText] = useState("This is the output text.");
 
-    const handleClick = () => {
-        setOutputText(textValue);
+    const handleClick = async () => {
+        const response = await fetch('/api/run-script', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ input_text: textValue }),
+        });
+        const data = await response.json();
+        setOutputText(data.output_text);
         setTextValue("");
     };
 
