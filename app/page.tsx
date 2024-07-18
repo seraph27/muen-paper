@@ -22,8 +22,6 @@ export default function Home() {
       body: JSON.stringify({ input_text: textValue }),
     });
     const data = await response.json();
-    alert("OK")
-    // alert(data)
     setOutputData(data);
     setTextValue("");
   };
@@ -55,13 +53,14 @@ export default function Home() {
                   .sort(([, a], [, b]) => b - a) // Sort entries by value in descending order
                   .map(([key, value]) => (
                     <div key={key} className="space-y-5">
-                      <strong>{key}</strong>: {value} {' '}
+                      <strong>{key}</strong>: {value}{" "}
                       <Button variant="outline" asChild>
                         <Link
                           className="bg-primary flex hover:bg-accent items-center"
                           href={`https://www.google.com/search?q=${encodeURIComponent(
                             key
                           )}`}
+                          target="_blank"
                         >
                           <ChevronRight className="icon" />
                         </Link>
