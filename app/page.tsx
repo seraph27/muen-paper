@@ -22,6 +22,8 @@ export default function Home() {
       body: JSON.stringify({ input_text: textValue }),
     });
     const data = await response.json();
+    alert("OK")
+    // alert(data)
     setOutputData(data);
     setTextValue("");
   };
