@@ -6,9 +6,9 @@ import { useState } from "react";
 export default function Home() {
     const [textValue, setTextValue] = useState("");
     const [outputText, setOutputText] = useState("This is the output text.");
-
+    //const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000';
     const handleClick = async () => {
-        const response = await fetch('/api/run-script', {
+        const response = await fetch(`/api/run-script`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export default function Home() {
                         className="w-full border border-secondary mt-2 hover:bg-foreground"
                         onClick={handleClick}
                     >
-                        Send message
+                        Submit
                     </Button>
                 </div>
                 <div className="h-[200px] rounded-lg text-white bg-primary p-4 overflow-auto w-full">
