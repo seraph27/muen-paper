@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from search import get_res
 
 app = Flask(__name__)
 CORS(app)
@@ -8,15 +9,8 @@ CORS(app)
 def run_script():
     data = request.json
     input_text = data.get('input_text')
-    
-    # Here, you would normally run your Python script.
-    # For example, if your script is `script.py` and it takes input text as an argument:
-    # result = subprocess.run(['python', 'script.py', input_text], capture_output=True, text=True)
-    
-    # For demonstration purposes, let's just return the input text reversed.
-    result = input_text[::-1]
-    
-    return jsonify({'output_text': result})
+    result = get_res(input_text)    
+    return jsonify(result)
  
 if __name__ == '__main__':
     app.run(debug=True)
