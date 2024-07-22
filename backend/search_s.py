@@ -55,7 +55,7 @@ def get_res(papername) :
     #     print(keyword)
 
     # Load JSON data from file
-    with open('backend/data/GRB_papers.json', 'r', encoding='utf-8') as file:
+    with open('data/GRB_papers.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
 
     ans = lookup_names(keywords, create_lookup_dict(data))
