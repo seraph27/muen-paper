@@ -15,7 +15,7 @@
     { "src": "/(.*)", "dest": "/$1" }
   ],
   "functions": {
-    "backend/*.py": {
+    "app/backend/**/*": {
       "maxDuration": 60
     }
   }

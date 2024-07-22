@@ -5,6 +5,7 @@ from backend.search_s import get_res
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route('/api/run-script', methods=['POST'])
 def run_script():
     data = request.json
