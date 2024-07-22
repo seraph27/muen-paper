@@ -61,6 +61,7 @@ export default function Home() {
                             key
                           )}`}
                           target="_blank"
+                          rel="noopener noreferrer" 
                         >
                           <ChevronRight className="icon" />
                         </Link>
