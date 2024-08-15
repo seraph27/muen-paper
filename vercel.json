@@ -13,10 +13,5 @@
   "routes": [
     { "src": "/api/(.*)", "dest": "/backend/app.py" },
     { "src": "/(.*)", "dest": "/$1" }
-  ],
-  "functions": {
-    "app/backend/**/*": {
-      "maxDuration": 60
-    }
-  }
+  ]
 }
